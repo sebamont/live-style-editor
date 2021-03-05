@@ -6,6 +6,7 @@ export const ThemeContextProvider = (props) => {
     const [backgroundColor, setBackgroundColor] = useState("#121212");
     const [headerColor, setHeaderColor] = useState("#FFFFFF");
     const [headerSize, setHeaderSize] = useState("64");
+    const [headerText, setHeaderText] = useState("Learning Styled Components");
 
     const changeBackgroundColor = (e) => {
         e.preventDefault();
@@ -19,6 +20,10 @@ export const ThemeContextProvider = (props) => {
         e.preventDefault();
         setHeaderSize(e.target.value);
     }
+    const changeHeaderText = (e) => {
+        e.preventDefault();
+        setHeaderText(e.target.value);
+    }
     
 
     return(
@@ -27,9 +32,11 @@ export const ThemeContextProvider = (props) => {
             backgroundColor,
             headerColor,
             headerSize,
+            headerText,
             changeBackgroundColor,
             changeHeaderColor,
-            changeHeaderSize
+            changeHeaderSize,
+            changeHeaderText
         }}>
             {props.children}
         </ThemeContext.Provider>
